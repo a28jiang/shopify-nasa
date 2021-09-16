@@ -9,10 +9,10 @@ const nasaAPI = axios.create({
 const fetchPics = (page) => {
   const params = {
     start_date: moment()
-      .subtract(2 * page, "days")
+      .subtract(3 * (page - 1) + 2, "days")
       .format("YYYY-MM-DD"),
     end_date: moment()
-      .subtract(2 * page - 2, "days")
+      .subtract(3 * page - 3, "days")
       .format("YYYY-MM-DD"),
   };
   return nasaAPI.get("/", { params });

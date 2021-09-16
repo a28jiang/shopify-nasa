@@ -9,7 +9,7 @@
 
 .Polaris-Header-Title {
   font-size: 32px;
-  padding-bottom: 12px;
+  padding-bottom: 20px;
 }
 
 .Polaris-Page {
@@ -22,7 +22,7 @@
 
 .Polaris-ButtonGroup {
   float: right;
-  margin-top: -64px;
+  margin-top: -68px;
 }
 
 .accent {

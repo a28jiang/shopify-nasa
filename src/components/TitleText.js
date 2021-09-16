@@ -2,7 +2,7 @@ import React from "react";
 
 const TitleText = () => (
   <>
-    <span class="accent">Nasa </span>Gallery🚀
+    <span class="accent">Nasa </span>Gallery 🚀💫
   </>
 );
 
