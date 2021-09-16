@@ -1,0 +1,30 @@
+.Polaris-Subheading {
+  font-size: 18px;
+  color: rgb(88, 88, 88);
+}
+.Polaris-Heading {
+  font-size: 24px;
+  width: 80%;
+}
+
+.Polaris-Header-Title {
+  font-size: 32px;
+  padding-bottom: 12px;
+}
+
+.Polaris-Page {
+  padding: 6rem;
+}
+
+.Polaris-Card {
+  padding: 1rem;
+}
+
+.Polaris-ButtonGroup {
+  float: right;
+  margin-top: -64px;
+}
+
+.accent {
+  color: #da4242;
+}
