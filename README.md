@@ -4,6 +4,12 @@
 
 The deployed app can be found at https://nasa-shopify.netlify.app/
 
+## Features 👀
+
+- Saved user likes
+- Animated like action
+- Loading state
+
 ## About 💫
 
 This project was created to explore [Nasa's APOD API](https://api.nasa.gov/#apod) and Shopify's [@shopify/polaris](https://polaris.shopify.com/components/get-started/) component library.
