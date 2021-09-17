@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, ButtonGroup, TitleText } from "../components";
+import { Card, Header, SkeletonComponent } from "../components";
 import { fetchPics } from "../api";
 import { Page } from "@shopify/polaris";
 
@@ -7,9 +7,11 @@ const Gallery = () => {
   const [page, setPage] = useState(1);
   const [liked, setLiked] = useState([]);
   const [images, setImages] = useState([]);
+  const [loadedData, setLoadedData] = useState(false);
 
   const fetchImages = async (range) => {
     const { data } = await fetchPics(range);
+    setLoadedData(true);
     setImages(data.reverse());
   };
 
@@ -30,8 +32,9 @@ const Gallery = () => {
 
   return (
     <>
-      <Page title={<TitleText />}>
-        <ButtonGroup setPage={setPage} page={page} />
+      <Page>
+        <Header setPage={setPage} page={page} />
+        {!loadedData && <SkeletonComponent />}
         {images &&
           images.map((image) => (
             <Card data={image} liked={liked} setLiked={setLiked} />

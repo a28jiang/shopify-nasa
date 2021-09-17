@@ -7,6 +7,7 @@ import Heart from "react-animated-heart";
 const HEART_STYLE = {
   position: "relative",
   top: "-32px",
+  right: "1rem",
 };
 
 const IMAGE_STYLE = {
@@ -32,7 +33,7 @@ const CustomCard = ({ data, liked, setLiked }) => {
   return (
     <Card sectioned>
       <Grid container spacing={4}>
-        <Grid item sm={6}>
+        <Grid item xs={12} sm={6}>
           <Image
             imageStyle={{ borderRadius: "12px" }}
             style={IMAGE_STYLE}
@@ -40,7 +41,7 @@ const CustomCard = ({ data, liked, setLiked }) => {
             alt={title}
           />
         </Grid>
-        <Grid item container sm={6}>
+        <Grid item container xs={12} sm={6}>
           <Grid item xs={10}>
             <Heading>{title}</Heading>
 

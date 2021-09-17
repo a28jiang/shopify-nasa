@@ -20,9 +20,16 @@
   padding: 1rem;
 }
 
+.Polaris-Caption {
+  font-size: 2rem;
+  width: 80%;
+  line-height: 4rem;
+  color: gray;
+}
+
 .Polaris-ButtonGroup {
   float: right;
-  margin-top: -68px;
+  margin-bottom: 1.5rem;
 }
 
 .accent {
