@@ -6,7 +6,9 @@ import "./App.css";
 function App() {
   return (
     <AppProvider i18n={enTranslations}>
-      <Gallery />
+      <div style={{ background: "linear-gradient(white, #b9edec)" }}>
+        <Gallery />
+      </div>
     </AppProvider>
   );
 }

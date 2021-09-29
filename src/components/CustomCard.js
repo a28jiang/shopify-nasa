@@ -3,11 +3,19 @@ import { Card, TextStyle, Heading, Subheading } from "@shopify/polaris";
 import { Grid } from "@material-ui/core";
 import Image from "material-ui-image";
 import Heart from "react-animated-heart";
+import YouTube from "react-youtube";
+
+const VID_OPTIONS = {
+  height: "320px",
+  width: "100%",
+  borderRadius: "12px",
+};
 
 const HEART_STYLE = {
   position: "relative",
   top: "-32px",
   right: "1rem",
+  marginBottom: "-60px",
 };
 
 const IMAGE_STYLE = {
@@ -17,6 +25,9 @@ const IMAGE_STYLE = {
 
 const CustomCard = ({ data, liked, setLiked }) => {
   const { date, title, url, explanation } = data;
+  const vidID = url.split("youtube.com/embed/");
+  const isVideo = vidID.length === 2;
+  const gridWidth = isVideo ? 12 : 6;
 
   const onHeartClick = (date) => {
     const index = liked.indexOf(date);
@@ -33,15 +44,19 @@ const CustomCard = ({ data, liked, setLiked }) => {
   return (
     <Card sectioned>
       <Grid container spacing={4}>
-        <Grid item xs={12} sm={6}>
-          <Image
-            imageStyle={{ borderRadius: "12px" }}
-            style={IMAGE_STYLE}
-            src={url}
-            alt={title}
-          />
+        <Grid item xs={12} sm={gridWidth}>
+          {isVideo ? (
+            <YouTube videoId={vidID[1].split("?")[0]} opts={VID_OPTIONS} />
+          ) : (
+            <Image
+              imageStyle={{ borderRadius: "12px" }}
+              style={IMAGE_STYLE}
+              src={url}
+              alt={title}
+            />
+          )}
         </Grid>
-        <Grid item container xs={12} sm={6}>
+        <Grid item container xs={12} sm={gridWidth}>
           <Grid item xs={10}>
             <Heading>{title}</Heading>
 

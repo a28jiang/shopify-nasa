@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ButtonGroup, Subheading } from "@shopify/polaris";
+import { Button, ButtonGroup, Caption } from "@shopify/polaris";
 
 const Options = ({ setPage, page }) => {
   const handlePageChange = (step) => {
@@ -11,7 +11,7 @@ const Options = ({ setPage, page }) => {
         onClick={() => handlePageChange(-1)}
         disabled={page === 1}
       >{`<`}</Button>
-      <Subheading>{page}</Subheading>
+      <Caption>{page}</Caption>
       <Button onClick={() => handlePageChange(1)}>{`>`}</Button>
     </ButtonGroup>
   );
